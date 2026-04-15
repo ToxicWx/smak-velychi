@@ -1,0 +1,22 @@
+:root {
+    /* --- FONTS --- */
+    --font-main: 'Gilroy', sans-serif;
+    --font-accent: 'MAK', serif;
+    
+    /* Header  */
+    --header-height: 92px;
+    
+    /* Background & Light elements */
+    --color-soft-pearl: hsla(48, 16%, 94%, 1);    /* Soft Pearl background */
+    --color-light-pearl: hsla(48, 16%, 94%, 1);   /* Light Pearl elements */
+    --color-light-grey: hsla(0, 0%, 76%, 1);      /* Light Grey */
+    
+    /* Main Accents */
+    --color-crimson-depth: hsla(349, 100%, 22%, 1); /* Crimson Depth */
+    --color-warm-beige: hsla(37, 25%, 68%, 1);     /* Warm Beige */
+    --color-sand-beige: hsla(40, 48%, 86%, 1);     /* Light Pearl / Beige variant */
+    
+    /* Dark elements */
+    --color-dark-grey: hsla(0, 0%, 35%, 1);       /* Dark Grey */
+    --color-obsidian-black: hsla(0, 0%, 9%, 1);    /* Obsidian Black */
+}

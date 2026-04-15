@@ -1,0 +1,31 @@
+.page-intro {
+  margin: 0;
+}
+
+.page-intro--center {
+  text-align: center;
+}
+
+.page-intro--left {
+  text-align: left;
+}
+
+.page-intro__title {
+  margin: 0;
+  font-family: var(--font-accent);
+  font-size: 32px;
+  line-height: normal;
+  font-weight: 300;
+  color: var(--color-obsidian-black);
+}
+
+.page-intro__subtitle {
+  margin: 24px auto 0;
+  font-size: 16px;
+  line-height: normal;
+  color: var(--color-dark-grey);
+}
+
+.page-intro--left .page-intro__subtitle {
+  margin-left: 0;
+}

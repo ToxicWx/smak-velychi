@@ -1,0 +1,237 @@
+.about {
+  background: var(--Soft-Pearl, #f2f1ed);
+  padding: 128px 40px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 41px;
+}
+
+.about__title {
+  color: var(--Obsidian-Black, #161616);
+  font-family: Mak;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.about__title-right {
+  color: var(--Crimson-Depth, #710014);
+  font-family: Mak;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.about__images {
+  position: relative;
+  width: 100%;
+  height: 494px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.about__img-blur {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1360px;
+  height: 414px;
+  object-fit: cover;
+  filter: blur(2px);
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.about__img-main {
+  position: relative;
+  z-index: 1;
+  width: 1074px;
+  height: 494px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about__location {
+  width: 100%;
+  color: var(--Obsidian-Black, #161616);
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 60px 0;
+}
+
+.about__quote {
+  text-align: center;
+  color: var(--Obsidian-Black, #161616);
+  font-family: Gilroy;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: uppercase;
+  margin: 0 0 64px 0;
+}
+
+.about__quote span {
+  color: var(--Obsidian-Black, #161616);
+  font-family: Mak;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.about__texts {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.about__text-left {
+  color: #585858;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about__text-left em {
+  font-family: Gilroy;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.about__text-right {
+  text-align: right;
+  color: #585858;
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about__text-right span {
+  color: var(--Crimson-Depth, #710014);
+  font-family: Gilroy;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.about__cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.about__card {
+  width: 670px;
+  height: 182px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about__card--dark {
+  background-color: var(--Crimson-Depth, #710014);
+  color: #fff;
+}
+
+.about__card--light {
+  background-color: #e8e4d9;
+  color: var(--color-obsidian-black);
+}
+
+.about__card--dark .about__card-icon {
+  position: absolute;
+  width: 180px;
+  height: 169px;
+  flex-shrink: 0;
+  left: 50px;
+  top: 5px;
+}
+
+.about__card--light .about__card-icon {
+  position: absolute;
+  width: 134px;
+  height: 111.101px;
+  top: 35px;
+  left: 58px;
+}
+
+.about__card--dark .about__card-content {
+  position: absolute;
+  padding-left: 258px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 46px;
+}
+
+.about__card--light .about__card-content {
+  position: absolute;
+  left: calc(26px + 134px + 58px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 48px;
+}
+
+.about__card--dark .about__card-content h4 {
+  color: var(--Light-Pearl, #ede2cc);
+  font-family: Gilroy, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.about__card--dark .about__card-content p {
+  color: var(--Light-Pearl, #ede2cc);
+  font-family: Gilroy, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+}
+
+.about__card--light .about__card-content h4 {
+  color: var(--Crimson-Depth, #710014);
+  font-family: Gilroy, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.about__card--light .about__card-content p {
+  color: var(--Crimson-Depth, #710014);
+  font-family: Gilroy, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  margin: 0;
+}

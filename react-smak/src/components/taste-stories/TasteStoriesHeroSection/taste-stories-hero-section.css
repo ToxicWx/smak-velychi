@@ -1,0 +1,67 @@
+.taste-stories-hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.taste-stories-hero-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.taste-stories-hero-section__info {
+  max-width: 780px;
+}
+
+.taste-stories-hero-section__title {
+  margin: 0 0 16px;
+  color: var(--color-crimson-depth);
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.taste-stories-hero-section__description {
+  margin: 0;
+  color: var(--color-obsidian-black);
+  font-size: 16px;
+  line-height: normal;
+}
+
+.taste-stories-hero-section__actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.taste-stories-hero-section__arrow {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.taste-stories-hero-section__arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.taste-stories-hero-section__slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.taste-stories-hero-section__slider::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,75 @@
+.taste-story-grid-card {
+  width: 440px;
+  height: 430px;
+  border: 1px solid var(--color-crimson-depth);
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--color-light-pearl);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.taste-story-grid-card__image-link {
+  display: block;
+  width: 100%;
+  height: 248px;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.taste-story-grid-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.taste-story-grid-card__content {
+  height: calc(100% - 248px);
+  padding: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.taste-story-grid-card__title {
+  margin: 0 0 16px;
+  color: var(--color-obsidian-black);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.taste-story-grid-card__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.taste-story-grid-card__meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.taste-story-grid-card__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-obsidian-black);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.taste-story-grid-card__meta-item img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(0);
+}
+
+.taste-story-grid-card__product {
+  margin: 16 0 0;
+  color: var(--color-obsidian-black);
+  font-size: 16px;
+  line-height: normal;
+}

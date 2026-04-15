@@ -1,0 +1,23 @@
+.taste-stories-page {
+  padding: 24px 0 80px;
+}
+
+.taste-stories-page__intro {
+  margin: 32px 0 40px;
+}
+
+.taste-stories-page__title {
+  margin: 0;
+  text-align: center;
+  color: var(--color-obsidian-black);
+  font-family: var(--font-accent);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.taste-stories-page__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}

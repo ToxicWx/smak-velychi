@@ -1,0 +1,50 @@
+.blog {
+  background: var(--Soft-Pearl, #f2f1ed);
+  height: 536px;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.blog__title {
+  font-family: "MAK";
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--Crimson-Depth, #710014);
+  text-align: right;
+  align-self: flex-end;
+  margin: 0 0 8px 0;
+}
+
+.blog__grid {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.blog__grid > .blog-card {
+  width: 439px;
+  flex-shrink: 0;
+}
+
+.blog__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+  height: 350px;
+  text-align: right;
+}
+
+.blog__right-text {
+  color: var(--Obsidian-Black, #161616);
+  text-align: right;
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}

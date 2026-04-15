@@ -1,0 +1,176 @@
+.assortment-hero__title {
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: 'MAK';
+  font-weight: 300;
+  font-size: 48px;
+}
+
+.assortment-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 440px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.assortment-banner {
+  position: relative;
+  display: block;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.assortment-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.assortment-banner__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(420px, calc(100% - 40px));
+  margin: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-soft-pearl);
+}
+
+.assortment-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 93px);
+  gap: 14px 20px;
+}
+
+.assortment-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-crimson-depth);
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.assortment-category--recipes {
+  grid-row: 1 / 3;
+  flex-direction: column;
+  padding: 34px 46px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assortment-category--sale,
+.assortment-category--special {
+  padding: 11px 31px;
+  justify-content: space-between;
+}
+
+.assortment-category__text {
+  margin: 0;
+  text-align: center;
+  color: var(--color-crimson-depth);
+  transition: color 0.3s ease;
+}
+
+.assortment-category--sale .assortment-category__text,
+.assortment-category--special .assortment-category__text {
+  text-align: left;
+}
+
+.assortment-category__icon {
+  display: block;
+  flex-shrink: 0;
+  transform-origin: center;
+  transition:
+    transform 0.32s ease,
+    background 0.3s ease,
+    filter 0.3s ease;
+}
+
+.assortment-category__icon--modified {
+  transform: translateX(15px);
+}
+
+
+.assortment-category__icon--offset {
+  transform: translateX(15px);
+}
+.assortment-category__icon--paper {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: var(--Crimson-Depth, #710014);
+  -webkit-mask: url('/assets/icons/paper-icon.svg') center / contain no-repeat;
+  mask: url('/assets/icons/paper-icon.svg') center / contain no-repeat;
+}
+
+.assortment-category--recipes:hover {
+  background: var(--Crimson-Depth, #710014);
+}
+
+.assortment-category--recipes:hover .assortment-category__text {
+  color: var(--Soft-Pearl, #F2F1ED);
+}
+
+.assortment-category--recipes:hover .assortment-category__icon--paper {
+  transform: scale(1.22) rotate(4.957deg);
+  background: var(--Soft-Pearl, #F2F1ED);
+}
+.assortment-category__icon--honey {
+  display: block;
+  width: 70px;
+  height: 60px;
+  background: var(--Crimson-Depth, #710014);
+
+  -webkit-mask: url('/assets/icons/honey-icon.svg') center / contain no-repeat;
+  mask: url('/assets/icons/honey-icon.svg') center / contain no-repeat;
+}
+
+.assortment-category--sale:hover {
+  background: var(--Crimson-Depth, #710014);
+}
+
+.assortment-category--sale:hover .assortment-category__text {
+  color: var(--Soft-Pearl, #F2F1ED);
+}
+
+.assortment-category--sale:hover .assortment-category__icon--honey {
+  transform: scale(1.2) rotate(8.768deg);
+  background: var(--Soft-Pearl, #F2F1ED);
+}
+
+.assortment-category--special {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.assortment-category--special:hover {
+  background: var(--Crimson-Depth, #710014);
+}
+
+.assortment-category--special:hover .assortment-category__text {
+  color: var(--Soft-Pearl, #F2F1ED);
+}
+
+.assortment-category--special:hover .assortment-category__icon {
+  transform: scale(1.18) rotate(10deg);
+  filter: brightness(0) saturate(100%) invert(96%) sepia(6%) saturate(142%) hue-rotate(24deg)
+    brightness(110%) contrast(91%);
+}
+
+
+

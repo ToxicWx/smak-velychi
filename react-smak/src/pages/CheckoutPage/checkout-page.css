@@ -1,0 +1,20 @@
+.checkout-page__title {
+  margin: 0 0 16px;
+  color: var(--color-obsidian-black);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.checkout-page .breadcrumbs {
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+.checkout-page__content {
+  display: grid;
+  grid-template-columns: 520px 570px;
+  justify-content: space-between;
+  align-items: start;
+  gap: 80px;
+}

@@ -1,0 +1,115 @@
+.orders-page {
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.orders-page__content {
+  margin-top: 8px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-order-section {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(27, 27, 27, 0.15);
+}
+
+.user-order-section:last-child {
+  border-bottom: none;
+}
+
+.user-order-section__title {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-obsidian-black);
+  margin-bottom: 12px;
+}
+
+.user-order-section__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.user-order-section__meta p {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-obsidian-black);
+  margin: 0;
+}
+
+.user-order-section__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.order-product-card {
+  width: 294px;
+  height: 103px;
+  border: 1px solid var(--color-crimson-depth);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  background-color: transparent;
+}
+
+.order-product-card__image-wrap {
+  width: 78px;
+  min-width: 78px;
+  height: 103px;
+  overflow: hidden;
+}
+
+.order-product-card__image {
+  width: 78px;
+  height: 103px;
+  object-fit: cover;
+  display: block;
+}
+
+.order-product-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 16px;
+}
+
+.order-product-card__title {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-obsidian-black);
+  margin: 0;
+}
+
+.order-product-card__price {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-obsidian-black);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .user-order-section__products {
+    flex-direction: column;
+  }
+
+  .order-product-card {
+    width: 100%;
+    max-width: 294px;
+  }
+}

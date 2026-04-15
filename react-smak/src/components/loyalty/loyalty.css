@@ -1,0 +1,163 @@
+.loyalty-page {
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.loyalty-page__title {
+  font-family: var(--font-accent);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-obsidian-black);
+  text-align: center;
+  margin: 12px 0 32px;
+}
+
+.loyalty-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.loyalty-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.loyalty-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 305px;
+  background-color: var(--color-crimson-depth);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.loyalty-card__title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: normal;
+  color: #ffffff;
+  margin: 0;
+}
+
+.loyalty-card__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 263px;
+  height: 295px;
+  object-fit: contain;
+  object-position: right bottom;
+  display: block;
+}
+
+.loyalty-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loyalty-card__how {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-obsidian-black);
+  margin: 0;
+}
+
+.loyalty-card__label {
+  font-weight: 400;
+}
+
+.loyalty-card__bonuses-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loyalty-card__subtitle {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-obsidian-black);
+  margin: 0;
+}
+
+.loyalty-card__bonus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loyalty-card__bonus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-obsidian-black);
+}
+
+.loyalty-card__bonus-icon {
+  width: 37px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.loyalty-card__note {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: rgba(22, 22, 22, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .loyalty-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loyalty-page__title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loyalty-page__title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .loyalty-card__image-wrap,
+  .loyalty-card__image {
+    height: auto;
+    aspect-ratio: 440 / 305;
+  }
+
+  .loyalty-card__title {
+    font-size: 22px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .loyalty-card__subtitle {
+    font-size: 20px;
+  }
+}

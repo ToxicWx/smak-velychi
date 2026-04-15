@@ -1,0 +1,190 @@
+.loyalty {
+  background: var(--Soft-Pearl, #f2f1ed);
+  height: 857px;
+  padding: 64px 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.loyalty__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.loyalty__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 440px;
+}
+
+.loyalty__header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 440px;
+  text-align: right;
+}
+
+.loyalty__title {
+  color: #161616;
+  font-family: "MAK";
+  font-size: 48px;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.loyalty__title-right {
+  color: var(--Crimson-Depth, #710014);
+  font-family: "MAK";
+  font-size: 48px;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+}
+
+.loyalty__desc,
+.loyalty__desc-right {
+  color: var(--Obsidian-Black, #161616);
+  font-family: Gilroy;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.loyalty__cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.loyalty__card {
+  position: relative;
+  width: 440px;
+  height: 550px;
+  border-radius: 15px;
+  background: var(--Crimson-Depth, #710014);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.loyalty__card-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 85%;
+  max-width: none;
+  object-fit: contain;
+  object-position: top;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.loyalty__card-title {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--Soft-Pearl, #f2f1ed);
+  margin: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.loyalty__card-hover {
+  position: absolute;
+  inset: 0;
+  background: var(--Light-Pearl, #ede2cc);
+  border-radius: 15px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 32px;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.loyalty__card:hover .loyalty__card-hover {
+  transform: translateX(0);
+}
+
+.loyalty__card-hover-how {
+  margin: 64px 51px 0 52px;
+  text-align: center;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--Crimson-Depth, #710014);
+  line-height: 1.4;
+}
+
+.loyalty__card-hover-title {
+  margin-top: 32px;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--Crimson-Depth, #710014);
+  text-align: center;
+}
+
+.loyalty__card-hover-list {
+  margin-top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.loyalty__card-hover-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--Crimson-Depth, #710014);
+  line-height: 1.4;
+}
+
+.loyalty__card-hover-list li img {
+  width: 21px;
+  height: 37px;
+  flex-shrink: 0;
+  transform: rotate(-90deg) scaleY(-1);
+  object-fit: contain;
+  margin-top: 0;
+}
+
+.loyalty__card-hover-extra {
+  align-self: flex-start;
+  color: var(--Dark-Grey, #585858);
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 8px 0 0 0;
+}
+
+.loyalty__card:hover .loyalty__card-img {
+  opacity: 0;
+}
+
+.loyalty__card:hover .loyalty__card-title {
+  opacity: 0;
+}

@@ -1,0 +1,7 @@
+.about-page {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.about-page__container {
+  padding-top: 16px;
+}

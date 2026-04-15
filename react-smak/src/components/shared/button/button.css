@@ -1,0 +1,224 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.ui-button__label,
+.ui-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-button__icon {
+  flex-shrink: 0;
+}
+
+.ui-button--full-width {
+  width: 100%;
+}
+
+/* VARIANTS */
+
+.ui-button--primary {
+  background: var(--color-crimson-depth);
+  color: var(--color-soft-pearl);
+}
+
+.ui-button--primary:hover {
+  background: var(--color-obsidian-black);
+}
+
+.ui-button--dark {
+  background: var(--color-obsidian-black);
+  color: var(--color-soft-pearl);
+}
+
+.ui-button--dark:hover {
+  background: #710014;
+}
+
+.ui-button--outline {
+  background: var(--color-soft-pearl);
+  color: var(--color-crimson-depth);
+  border: 1px solid var(--color-crimson-depth);
+}
+
+.ui-button--outline:hover {
+  background: var(--color-crimson-depth);
+  color: var(--color-soft-pearl);
+}
+
+.ui-button--outline-dark {
+  background: var(--color-soft-pearl);
+  color: var(--color-obsidian-black);
+  border: 1px solid var(--color-crimson-depth);
+}
+
+.ui-button--outline-dark:hover {
+  background: var(--color-crimson-depth);
+  color: var(--color-soft-pearl);
+}
+
+.ui-button--product {
+  background: var(--color-obsidian-black);
+  color: var(--color-soft-pearl);
+  gap: 6px;
+}
+
+.ui-button--product:hover {
+  background: var(--color-crimson-depth);
+}
+
+.ui-button--success {
+  background: var(--color-soft-pearl);
+  color: var(--color-crimson-depth);
+  border: 1px solid var(--color-crimson-depth);
+}
+
+.ui-button--success:hover {
+  opacity: 0.9;
+}
+
+.ui-button--link {
+  min-height: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-crimson-depth);
+}
+
+.ui-button--link:hover {
+  opacity: 0.7;
+}
+
+.ui-button--icon {
+  width: 43px;
+  min-width: 43px;
+  height: 43px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--color-soft-pearl);
+  color: var(--color-crimson-depth);
+  border: 1px solid var(--color-crimson-depth);
+}
+
+.ui-button--icon:hover {
+  background: var(--color-crimson-depth);
+  color: var(--color-soft-pearl);
+}
+
+.ui-button--disabled,
+.ui-button:disabled {
+  background: var(--color-light-grey);
+  color: var(--color-dark-grey);
+  border-color: var(--color-light-grey);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ui-button--light {
+background: var(--Crimson-Depth, #710014);
+color: var(--Soft-Pearl, #F2F1ED);
+}
+
+.ui-button--light:hover{
+background: var(--Obsidian-Black, #161616);
+}
+
+.ui-button--detailed{
+  background: var(--Soft-Pearl, #F2F1ED);
+  border: 1px solid var(--Crimson-Depth, #710014);
+  color: var(--Obsidian-Black, #161616);
+}
+.ui-button--detailed:hover{
+  background: var(--color-crimson-depth);
+  color: #fff;
+}
+
+/* EXACT SIZE PRESETS */
+
+.ui-button--auto {
+  width: auto;
+}
+
+.ui-button--primary-cta {
+  width: 238px;
+  height: 43px;
+}
+
+.ui-button--dark-cta {
+  width: 223px;
+  height: 43px;
+}
+
+.ui-button--outline-wide {
+  width: 276px;
+  height: 43px;
+}
+
+.ui-button--outline-card {
+  width: 192px;
+  height: 41px;
+  min-height: 41px;
+}
+
+.ui-button--product-cart {
+  width: 194px;
+  height: 43px;
+}
+
+.ui-button--icon-round {
+  width: 43px;
+  min-width: 43px;
+  height: 43px;
+  padding: 0;
+}
+
+.ui-button--success-auto {
+  min-height: 43px;
+}
+
+.ui-button--detailed-card{
+  width: 136px;
+  height: 41px;
+}
+
+.ui-button--long{
+  width: 299px;
+  height: 43px;
+}
+
+.ui-button--cart-wide {
+  width: 365px;
+  height: 43px;
+}
+
+.ui-button--product-details {
+  width: 162px;
+  min-width: 162px;
+  height: 41px;
+  min-height: 41px;
+  padding: 12px 22px;
+}

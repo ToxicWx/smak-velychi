@@ -1,0 +1,28 @@
+/* Base */
+@import url('./reset.css');
+@import url('./vars.css');
+@import url('./fonts.css');
+
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-soft-pearl);
+    color: var(--color-obsidian-black);
+    padding-top: var(--header-height);
+   
+
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* 2. Обмеження контенту  */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-inline: 40px;
+    width: 100%;
+}
+
+.page {
+  margin-bottom: 160px;
+}

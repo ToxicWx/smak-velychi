@@ -1,0 +1,20 @@
+.taste-stories-grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.taste-stories-grid-section__title {
+  margin: 0;
+  color: var(--color-obsidian-black);
+  font-family: var(--font-accent);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.taste-stories-grid-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 440px);
+  gap: 20px;
+}

@@ -1,0 +1,88 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: shop_mysql
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  directus:
+    image: directus/directus:11.1.0
+    container_name: shop_directus
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8055:8055"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      KEY: ${DIRECTUS_KEY}
+      SECRET: ${DIRECTUS_SECRET}
+
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+
+      DB_CLIENT: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${MYSQL_DATABASE}
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+
+      WEBSOCKETS_ENABLED: "true"
+
+      # CORS — дозволяємо фронтенд в dev і prod
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "http://localhost:5173,http://localhost:3000"
+
+      # Важливо: PUBLIC_URL — це адреса самого Directus.
+      # Якщо фронтенд звертається з браузера — тут має бути localhost:8055.
+      # На продакшні замінити на реальний домен.
+      PUBLIC_URL: "http://localhost:8055"
+
+      # Налаштування зображень (опційно)
+      ASSETS_TRANSFORM_IMAGE_MAX_DIMENSION: "2000"
+      ASSETS_CACHE_TTL: "7d"
+
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+
+  frontend:
+    image: node:20-alpine
+    container_name: shop_frontend
+    restart: unless-stopped
+    working_dir: /app
+    depends_on:
+      - directus
+    ports:
+      - "5173:5173"
+    environment:
+      # Важливо: браузер звертається до Directus напряму,
+      # тому тут localhost:8055, а НЕ http://directus:8055
+      VITE_DIRECTUS_URL: http://localhost:8055
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - ../react-smak:/app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+volumes:
+  mysql_data:
