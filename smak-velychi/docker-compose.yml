@@ -51,12 +51,12 @@ services:
 
       # CORS — дозволяємо фронтенд в dev і prod
       CORS_ENABLED: "true"
-      CORS_ORIGIN: "http://localhost:5173,http://localhost:3000"
+      CORS_ORIGIN: "http://localhost:5173,http://localhost:3000,http://feddev.xyz,http://www.feddev.xyz,https://feddev.xyz,https://www.feddev.xyz"
 
       # Важливо: PUBLIC_URL — це адреса самого Directus.
       # Якщо фронтенд звертається з браузера — тут має бути localhost:8055.
       # На продакшні замінити на реальний домен.
-      PUBLIC_URL: "http://localhost:8055"
+      PUBLIC_URL: "http://feddev.xyz:8055"
 
       # Налаштування зображень (опційно)
       ASSETS_TRANSFORM_IMAGE_MAX_DIMENSION: "2000"
@@ -78,7 +78,7 @@ services:
     environment:
       # Важливо: браузер звертається до Directus напряму,
       # тому тут localhost:8055, а НЕ http://directus:8055
-      VITE_DIRECTUS_URL: http://localhost:8055
+      VITE_DIRECTUS_URL: http://feddev.xyz:8055
       CHOKIDAR_USEPOLLING: "true"
     volumes:
       - ../react-smak:/app
