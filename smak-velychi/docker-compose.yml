@@ -78,7 +78,7 @@ services:
     environment:
       # Важливо: браузер звертається до Directus напряму,
       # тому тут localhost:8055, а НЕ http://directus:8055
-      VITE_DIRECTUS_URL: http://feddev.xyz:8055
+      VITE_DIRECTUS_URL: /directus
       CHOKIDAR_USEPOLLING: "true"
     volumes:
       - ../react-smak:/app

@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_DIRECTUS_URL
+const BASE_URL = import.meta.env.VITE_DIRECTUS_URL || '/directus'
 const TOKEN_KEY = 'smak_auth_token'
 const GUEST_CART_TOKEN_KEY = 'smak_guest_cart_token'
 const SERVICE_EMAIL = import.meta.env.VITE_DIRECTUS_SERVICE_EMAIL
