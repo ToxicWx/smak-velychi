@@ -1,7 +1,16 @@
-import './checkout-order-card.css'
 import { Link } from 'react-router-dom'
+import { normalizeUnitLabel } from '../../../utils/unit'
+import './checkout-order-card.css'
 
 function CheckoutOrderCard({ item, onEdit }) {
+  const normalizedUnit = normalizeUnitLabel(item.unit)
+  const priceLabel = normalizedUnit
+    ? `${item.price} грн / ${normalizedUnit}`
+    : `${item.price} грн`
+  const oldPriceLabel = normalizedUnit
+    ? `${item.oldPrice} грн / ${normalizedUnit}`
+    : `${item.oldPrice} грн`
+
   return (
     <article className="checkout-order-card">
       <Link to="#" className="checkout-order-card__image-link">
@@ -26,14 +35,10 @@ function CheckoutOrderCard({ item, onEdit }) {
         </div>
 
         <div className="checkout-order-card__bottom">
-          <p className="checkout-order-card__price">
-            {item.price} грн / {item.unit}
-          </p>
+          <p className="checkout-order-card__price">{priceLabel}</p>
 
           {item.oldPrice && (
-            <p className="checkout-order-card__old-price">
-              {item.oldPrice} грн / {item.unit}
-            </p>
+            <p className="checkout-order-card__old-price">{oldPriceLabel}</p>
           )}
         </div>
       </div>

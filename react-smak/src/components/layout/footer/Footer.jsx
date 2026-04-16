@@ -11,7 +11,7 @@ function Footer({ onOpenOrderTasting }) {
     <footer className="footer container">
       <div className="footer__logo">
         <Link to="/" aria-label="Smak Velychi">
-          <img src="/assets/icons/logo-with-text.svg" alt="Smak Velychi logo" />
+          <img src="/assets/icons/logo-new.png" alt="Smak Velychi logo" />
         </Link>
       </div>
 
@@ -93,7 +93,7 @@ function Footer({ onOpenOrderTasting }) {
       </nav>
 
       <div className="footer__bottom">
-        <p className="footer__meta">© Smak Velychi, 2025</p>
+        <p className="footer__meta">© Smak Velychi, 2026</p>
         <p className="footer__meta">ТРЦ “Dream Town”, м. Київ</p>
       </div>
     </footer>

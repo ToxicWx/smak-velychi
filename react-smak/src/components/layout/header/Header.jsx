@@ -5,6 +5,7 @@ import { getCategories, getAssetUrl, searchProducts } from '../../../api/directu
 import { useAuth } from '../../../context/AuthContext'
 import { useCart } from '../../../context/CartContext'
 import { resolvePrice } from '../../../utils/price'
+import { normalizeUnitLabel } from '../../../utils/unit'
 import './header.css'
 import Button from '../../shared/button/Button'
 
@@ -277,6 +278,7 @@ function Header({ onOpenCart, onOpenLogin, onOpenOrderTasting }) {
                     <div className="header__search-results">
                       {searchResults.map((product) => {
                         const { price, oldPrice } = resolvePrice(product)
+                        const normalizedUnit = normalizeUnitLabel(product.unit_label)
 
                         return (
                           <Link
@@ -297,7 +299,7 @@ function Header({ onOpenCart, onOpenLogin, onOpenOrderTasting }) {
                               <div className="header__search-result-prices">
                                 <span className="header__search-result-price">
                                   {price} грн
-                                  {product.unit_label ? ` / ${product.unit_label}` : ''}
+                                  {normalizedUnit ? ` / ${normalizedUnit}` : ''}
                                 </span>
 
                                 {oldPrice ? (

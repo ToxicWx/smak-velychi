@@ -17,6 +17,7 @@ import {
 import { useCart } from '../../context/CartContext'
 import '../../components/product-details/product-details.css'
 import { resolvePrice, formatPrice } from '../../utils/price'
+import { normalizeUnitLabel } from '../../utils/unit'
 
 function mapInfoBlocks(item) {
   return [
@@ -99,7 +100,7 @@ function ProductPage({ productSlug }) {
           image: gallery[0] || getAssetUrl(item.og_image_file_id),
           price,
           oldPrice,
-          unit: item.unit_label || '',
+          unit: normalizeUnitLabel(item.unit_label),
           slogan: item.slogan || '',
           descriptionHtml: item.description || '',
           ingredientsTitle: item.ingredients_title || '',
@@ -136,7 +137,7 @@ function ProductPage({ productSlug }) {
               image: getAssetUrl(relatedItem.og_image_file_id),
               price: relatedPrice.price,
               oldPrice: relatedPrice.oldPrice,
-              unit: relatedItem.unit_label,
+              unit: normalizeUnitLabel(relatedItem.unit_label),
               href: `/product/${relatedItem.slug}`,
               onAddToCart: () => {
                 addItem({
@@ -146,7 +147,7 @@ function ProductPage({ productSlug }) {
                   image: getAssetUrl(relatedItem.og_image_file_id),
                   price: relatedPrice.price,
                   oldPrice: relatedPrice.oldPrice,
-                  unit: relatedItem.unit_label || '',
+                  unit: normalizeUnitLabel(relatedItem.unit_label),
                 })
                 openCart()
               },

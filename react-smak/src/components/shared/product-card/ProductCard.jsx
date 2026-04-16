@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Button from '../button/Button'
+import { normalizeUnitLabel } from '../../../utils/unit'
 import './product-card.css'
 
 function ProductCard({
@@ -11,16 +12,17 @@ function ProductCard({
   href = '#',
   onAddToCart,
 }) {
+  const normalizedUnit = normalizeUnitLabel(unit)
+
   const handlePlusClick = (event) => {
     event.preventDefault()
     event.stopPropagation()
     onAddToCart?.()
   }
 
-  // Форматуємо ціну: якщо unit є — показуємо, якщо нема — просто грн
-  const formatPrice = (val) => {
-    if (!val && val !== 0) return null
-    return unit ? `${val} грн / ${unit}` : `${val} грн`
+  const formatPrice = (value) => {
+    if (value === null || value === undefined || value === '') return null
+    return normalizedUnit ? `${value} грн / ${normalizedUnit}` : `${value} грн`
   }
 
   const formattedPrice = formatPrice(price)

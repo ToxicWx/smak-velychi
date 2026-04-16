@@ -16,12 +16,7 @@ function isProfileIncomplete(user) {
   const lastName = String(user?.last_name || user?.lastName || '').trim()
   const email = String(user?.email || '').trim()
 
-  return (
-    !firstName ||
-    !lastName ||
-    !email ||
-    (firstName === 'Новий' && lastName === 'Користувач')
-  )
+  return !firstName || !lastName || !email
 }
 
 function MainLayout() {

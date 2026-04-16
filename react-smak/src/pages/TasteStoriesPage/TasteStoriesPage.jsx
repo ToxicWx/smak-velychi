@@ -81,7 +81,7 @@ function TasteStoriesPage() {
             <>
               {featuredRecipeStories.length > 0 ? (
                 <TasteStoriesHeroSection
-                  title="Улюблені Історії"
+                  title="Сучасна трапеза"
                   description="Сезонні рецепти та гастроідеї з фірмовими продуктами."
                   items={featuredRecipeStories}
                 />
@@ -89,14 +89,14 @@ function TasteStoriesPage() {
 
               {featuredOtherStories.length > 0 ? (
                 <TasteStoriesHeroSection
-                  title="Смачні Історії"
+                  title="Смаковий літопис"
                   description="Добірка історій про автентичні страви, давні традиції та побутові рецепти."
                   items={featuredOtherStories}
                 />
               ) : null}
 
               {remainingStories.length > 0 ? (
-                <TasteStoriesGridSection title="Інші Історії" items={remainingStories} />
+                <TasteStoriesGridSection title="Інші Рецепти" items={remainingStories} />
               ) : null}
             </>
           ) : (

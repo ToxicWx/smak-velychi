@@ -5,6 +5,7 @@ import ProductCard from '../../components/shared/product-card/ProductCard'
 import { getCategoryBySlug, getProductsByCategory, getAssetUrl } from '../../api/directus'
 import { useCart } from '../../context/CartContext'
 import { resolvePrice } from '../../utils/price'
+import { normalizeUnitLabel } from '../../utils/unit'
 import './category-page.css'
 
 const PAGE_SIZE = 15
@@ -90,7 +91,7 @@ function CategoryPage() {
       image: getAssetUrl(product.og_image_file_id),
       price,
       oldPrice,
-      unit: product.unit_label || '',
+      unit: normalizeUnitLabel(product.unit_label),
     })
   }
 
@@ -135,7 +136,7 @@ function CategoryPage() {
                   image={getAssetUrl(product.og_image_file_id)}
                   price={price}
                   oldPrice={oldPrice}
-                  unit={product.unit_label}
+                  unit={normalizeUnitLabel(product.unit_label)}
                   href={`/product/${product.slug}`}
                   onAddToCart={() => handleAddToCart(product)}
                 />

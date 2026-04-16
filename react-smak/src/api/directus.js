@@ -1,4 +1,6 @@
-const BASE_URL = import.meta.env.VITE_DIRECTUS_URL || '/directus'
+import { normalizeUnitLabel } from '../utils/unit'
+
+const BASE_URL = import.meta.env.VITE_DIRECTUS_URL
 const TOKEN_KEY = 'smak_auth_token'
 const GUEST_CART_TOKEN_KEY = 'smak_guest_cart_token'
 const SERVICE_EMAIL = import.meta.env.VITE_DIRECTUS_SERVICE_EMAIL
@@ -720,8 +722,8 @@ async function getUserById(userId) {
 
 async function createUserByPhone(phone) {
   const payload = {
-    first_name: 'Новий',
-    last_name: 'Користувач',
+    first_name: '',
+    last_name: '',
     phone,
     phone_verified: true,
     email_verified: false,
@@ -1289,7 +1291,7 @@ export async function createOrder(payload) {
       product_id: item.productId,
       product_name_snapshot: item.title,
       product_slug_snapshot: item.slug || null,
-      unit_label_snapshot: item.unit || null,
+      unit_label_snapshot: normalizeUnitLabel(item.unit) || null,
       price_snapshot: price,
       old_price_snapshot: oldPrice,
       quantity,

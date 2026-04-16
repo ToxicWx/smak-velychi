@@ -1,5 +1,5 @@
-import './assortment-hero.css'
 import { Link } from 'react-router-dom'
+import './assortment-hero.css'
 
 function AssortmentHero() {
   return (
@@ -19,35 +19,35 @@ function AssortmentHero() {
         </Link>
 
         <div className="assortment-categories">
-                <Link
-          to="/stories"
-          className="assortment-category assortment-category--recipes"
-        >
-          <p className="assortment-category__text">
-            “Історії Смаку”
-            <br />– Рецепти
-          </p>
+          <Link
+            to="/stories"
+            className="assortment-category assortment-category--recipes"
+          >
+            <p className="assortment-category__text">
+              “Історії Смаку”
+              <br />– Рецепти
+            </p>
 
-          <span
-            className="assortment-category__icon assortment-category__icon--paper"
-            aria-hidden="true"
-          />
-        </Link>
-
-                  <Link
-          to="/category/sale"
-          className="assortment-category assortment-category--sale"
-        >
-          <p className="assortment-category__text">Акції</p>
-
-          <span
-            className="assortment-category__icon assortment-category__icon--honey"
-            aria-hidden="true"
-          />
-        </Link>
+            <span
+              className="assortment-category__icon assortment-category__icon--paper"
+              aria-hidden="true"
+            />
+          </Link>
 
           <Link
             to="/discounts"
+            className="assortment-category assortment-category--sale"
+          >
+            <p className="assortment-category__text">Акції</p>
+
+            <span
+              className="assortment-category__icon assortment-category__icon--honey"
+              aria-hidden="true"
+            />
+          </Link>
+
+          <Link
+            to="/special-offers"
             className="assortment-category assortment-category--special"
           >
             <p className="assortment-category__text">

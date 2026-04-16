@@ -7,6 +7,7 @@ import AssortmentCatalog from '../../components/assortment/assortment-catalog/As
 import { getCategories, getProducts, getAssetUrl } from '../../api/directus'
 import { useCart } from '../../context/CartContext'
 import { resolvePrice } from '../../utils/price'
+import { normalizeUnitLabel } from '../../utils/unit'
 import './assortment-page.css'
 
 const SECTIONS_LIMIT = 6
@@ -28,7 +29,7 @@ function buildProductCard(product, addItem, openCart) {
     image: getAssetUrl(product.og_image_file_id),
     price,
     oldPrice,
-    unit: product.unit_label,
+    unit: normalizeUnitLabel(product.unit_label),
     href: `/product/${product.slug}`,
     onAddToCart: () => {
       addItem({
@@ -38,7 +39,7 @@ function buildProductCard(product, addItem, openCart) {
         image: getAssetUrl(product.og_image_file_id),
         price,
         oldPrice,
-        unit: product.unit_label || '',
+        unit: normalizeUnitLabel(product.unit_label),
       })
       openCart()
     },

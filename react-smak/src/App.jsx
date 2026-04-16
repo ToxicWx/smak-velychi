@@ -20,6 +20,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage/PrivacyPolicyPage'
 import PublicOfferPage from './pages/PublicOfferPage/PublicOfferPage'
 import VacanciesPage from './pages/VacanciesPage/VacanciesPage'
 import SpecialOffersPage from './pages/SpecialOffersPage/SpecialOffersPage'
+import SpecialPropositionsPage from './pages/SpecialPropositionsPage/SpecialPropositionsPage'
 import RecipePage from './pages/RecipePage/RecipePage'
 
 function App() {
@@ -50,9 +51,9 @@ function App() {
         <Route path="/offer" element={<PublicOfferPage />} />
         <Route path="/vacancies" element={<VacanciesPage />} />
         <Route path="/discounts" element={<SpecialOffersPage />} />
+        <Route path="/special-offers" element={<SpecialPropositionsPage />} />
         <Route path="/recipe/:slug" element={<RecipePage />} />
 
-        {/* 404 — будь-який невідомий URL рендерить цю сторінку */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
@@ -64,8 +65,6 @@ function ProductRoute() {
   return <ProductPage productSlug={slug} />
 }
 
-// Мінімальна 404-сторінка прямо тут.
-// Якщо захочеш — перенеси в окремий файл src/pages/NotFoundPage.jsx
 function NotFoundPage() {
   return (
     <section style={{ padding: '80px 0', textAlign: 'center' }}>

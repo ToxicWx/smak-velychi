@@ -1,14 +1,12 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../shared/button/Button'
 import CartItemCard from '../CartItemCard/CartItemCard'
 import CartEmptyState from '../CartEmptyState/CartEmptyState'
-import CartAuthState from '../CartAuthState/CartAuthState'
 import { useCart } from '../../../context/CartContext'
-import { useAuth } from '../../../context/AuthContext'
 import './cart-modal.css'
 
-function CartModal({ isOpen = false, onClose, onOpenLogin }) {
+function CartModal({ isOpen = false, onClose }) {
   const [isVisible, setIsVisible] = useState(isOpen)
   const [isRendered, setIsRendered] = useState(isOpen)
   const navigate = useNavigate()
@@ -22,9 +20,6 @@ function CartModal({ isOpen = false, onClose, onOpenLogin }) {
     toggleSelect,
     toggleSelectAll,
   } = useCart()
-
-  // Знаємо, чи авторизований юзер, щоб показати CartAuthState або список товарів
-  const { isAuthorized } = useAuth()
 
   useEffect(() => {
     if (isOpen) {
@@ -53,42 +48,6 @@ function CartModal({ isOpen = false, onClose, onOpenLogin }) {
 
   const handleSelectAll = () => {
     toggleSelectAll(!allSelected)
-  }
-
-  // Неавторизований юзер бачить заглушку з кнопкою "Увійти".
-  // Після успішного логіну кошик відкриється знову (логіка в MainLayout).
-  if (!isAuthorized) {
-    return (
-      <div className={`cart-modal ${isVisible ? 'cart-modal--open' : ''}`}>
-        <div className="cart-modal__overlay" onClick={onClose} aria-hidden="true" />
-
-        <aside
-          className="cart-modal__panel"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Кошик"
-        >
-          <div className="cart-modal__header">
-            <h2 className="cart-modal__title">Кошик</h2>
-
-            <button
-              type="button"
-              className="cart-modal__close"
-              onClick={onClose}
-              aria-label="Закрити кошик"
-            >
-              ×
-            </button>
-          </div>
-
-          <div className="cart-modal__divider" />
-
-          <div className="cart-modal__body">
-            <CartAuthState onOpenLogin={onOpenLogin} />
-          </div>
-        </aside>
-      </div>
-    )
   }
 
   return (

@@ -3,20 +3,45 @@ import { Link } from 'react-router-dom'
 import './home-assortment.css'
 import ProductCard from '../../shared/product-card/ProductCard'
 import Button from '../../shared/button/Button'
-import { getAssetUrl, getProducts } from '../../../api/directus'
+import { getAssetUrl, getCategories, getProducts } from '../../../api/directus'
 import { useCart } from '../../../context/CartContext'
 import { resolvePrice } from '../../../utils/price'
+import { normalizeUnitLabel } from '../../../utils/unit'
 
 const HOME_PRODUCTS_LIMIT = 6
+
+function normalizeValue(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[`’']/g, "'")
+    .trim()
+}
 
 function HomeAssortment() {
   const { addItem } = useCart()
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    getProducts()
-      .then((response) => {
-        setProducts((response.data || []).slice(0, HOME_PRODUCTS_LIMIT))
+    Promise.all([getCategories(), getProducts()])
+      .then(([categoriesResponse, productsResponse]) => {
+        const categories = categoriesResponse.data || []
+        const allProducts = productsResponse.data || []
+        const meatCategory = categories.find((category) =>
+          normalizeValue(category.name).includes("м'яс")
+        )
+
+        const homeProducts = meatCategory
+          ? allProducts.filter((product) => {
+              const categoryId =
+                product.category_id && typeof product.category_id === 'object'
+                  ? product.category_id.id
+                  : product.category_id
+
+              return String(categoryId) === String(meatCategory.id)
+            })
+          : allProducts
+
+        setProducts(homeProducts.slice(0, HOME_PRODUCTS_LIMIT))
       })
       .catch((error) => {
         console.error('Помилка завантаження товарів на головній:', error)
@@ -34,7 +59,7 @@ function HomeAssortment() {
       image: getAssetUrl(product.og_image_file_id),
       price,
       oldPrice,
-      unit: product.unit_label || '',
+      unit: normalizeUnitLabel(product.unit_label),
     })
   }
 
@@ -56,7 +81,7 @@ function HomeAssortment() {
                 image={getAssetUrl(product.og_image_file_id)}
                 price={price}
                 oldPrice={oldPrice}
-                unit={product.unit_label}
+                unit={normalizeUnitLabel(product.unit_label)}
                 href={`/product/${product.slug}`}
                 onAddToCart={() => handleAddToCart(product)}
               />

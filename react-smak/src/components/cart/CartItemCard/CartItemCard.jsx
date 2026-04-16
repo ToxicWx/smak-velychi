@@ -1,6 +1,7 @@
-import CartQuantityControl from '../CartQuantityControl/CartQuantityControl'
-import './cart-item-card.css'
 import { Link } from 'react-router-dom'
+import CartQuantityControl from '../CartQuantityControl/CartQuantityControl'
+import { normalizeUnitLabel } from '../../../utils/unit'
+import './cart-item-card.css'
 
 function CartItemCard({
   item,
@@ -10,6 +11,14 @@ function CartItemCard({
   onDecrease,
   onIncrease,
 }) {
+  const normalizedUnit = normalizeUnitLabel(item.unit)
+  const priceLabel = normalizedUnit
+    ? `${item.price} грн / ${normalizedUnit}`
+    : `${item.price} грн`
+  const oldPriceLabel = normalizedUnit
+    ? `${item.oldPrice} грн / ${normalizedUnit}`
+    : `${item.oldPrice} грн`
+
   return (
     <article className="cart-item-card-wrapper">
       {showCheckbox && (
@@ -48,14 +57,10 @@ function CartItemCard({
 
           <div className="cart-item-card__bottom">
             <div className="cart-item-card__prices">
-              <p className="cart-item-card__price">
-                {item.price} грн / {item.unit}
-              </p>
+              <p className="cart-item-card__price">{priceLabel}</p>
 
               {item.oldPrice && (
-                <p className="cart-item-card__old-price">
-                  {item.oldPrice} грн / {item.unit}
-                </p>
+                <p className="cart-item-card__old-price">{oldPriceLabel}</p>
               )}
             </div>
 
